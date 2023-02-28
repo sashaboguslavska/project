@@ -21,22 +21,35 @@ const buttons = document.getElementsByClassName('btn');
 for (i of buttons){
     clickCount = 0
     i.addEventListener("click", function(e){
+        let selected = []
         var btn_choice = e.target.id;
         var color = document.getElementById(btn_choice)
         if(color.id =='black' || color.id =='white'){
         }
         else{
             if ( clickCount == 0 ) {
-           
-                color.style.backgroundColor = "black";
+                color.className += " selected white";
                 clickCount=1;
-                color.id = "black"
              }
              else {
-                color.style.backgroundColor = "white";
-                clickCount=0;
-                color.id = "white"
+               color.className += " selected black";
+                clickCount=0; 
              }  
-        } 
+        }  
+        const b = document.querySelectorAll('button:not(#clear)')
+        for (o of b){
+          selected.push(o)
+        }
+        console.log(selected)
     }) 
+   
+}
+
+function Clear(){
+    const b = document.querySelectorAll('button:not(#clear)')  
+    for(i of b){
+        i.className = "btn"
+    }
+    selected=[]
+    console.log(selected)
 }
