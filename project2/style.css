@@ -10,8 +10,17 @@ table{
     text-align: center;
     font-weight: 600;
     margin: 30px auto;
+    background-color: bisque;
 }
 
 #name{
     text-align: center;
+}
+.btn{
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    background-color: transparent;
 }
