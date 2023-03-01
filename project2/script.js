@@ -24,23 +24,24 @@ for (i of buttons){
         let selected = []
         var btn_choice = e.target.id;
         var color = document.getElementById(btn_choice)
-        if(color.id =='black' || color.id =='white'){
+        if(color.className =='white' || color.className =='black'){
         }
         else{
             if ( clickCount == 0 ) {
-                color.className += " selected white";
+                color.className = "white";
                 clickCount=1;
              }
              else {
-               color.className += " selected black";
+               color.className = "black";
                 clickCount=0; 
              }  
         }  
         const b = document.querySelectorAll('button:not(#clear)')
         for (o of b){
           selected.push(o)
-        }
+        }//array wit all buttons with id and class name
         console.log(selected)
+        Check(selected)//function to check if there are 5 buttons with the same classnames in a row
     }) 
    
 }
@@ -52,4 +53,9 @@ function Clear(){
     }
     selected=[]
     console.log(selected)
+}
+
+function Check(selected){ 
+ 
+   
 }
