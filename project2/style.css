@@ -1,19 +1,28 @@
+body{
+    font-family: 'Ubuntu', sans-serif; 
+}
 td{
-    border: 1px solid black;
+    border: 1.5px solid black;
     padding: 1px;
 }
+
 table{
     border-collapse: collapse;
+    border-style:hidden;
     font-size: large;
     width: 700px;
     height: 700px;
     text-align: center;
     font-weight: 600;
     margin: 30px auto;
-    background-color: bisque;
+    
+}
+hr{
+    border: 0.5px solid black;
 }
 
 #name{
+    width: 100%;
     text-align: center;
 }
 .btn{
@@ -24,30 +33,211 @@ table{
     border: none;
     background-color: transparent;
 }
+.btn:hover{
+    background-color: rgb(171, 170, 170);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);  
+}
+
+.white{
+    background-color: rgb(255, 255, 255);
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+}
+.black{
+    background-color: grey;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+}
+
+#header{
+  width: 100%;
+  height: 80px;
+ position: absolute;
+ left: 0px;
+ top: 0;
+ z-index: 2;
+ -webkit-box-shadow: 0px 16px 41px -9px rgba(0, 0, 0, 1);
+ -moz-box-shadow: 0px 16px 41px -9px rgba(0, 0, 0, 1);
+ box-shadow: 0px 16px 41px -9px rgba(0, 0, 0, 1);
+}
+
+
+#menu_btn{
+    position: absolute;
+    left: 15px;
+    top:15px;
+    height: 35px;
+    width: 35px;
+    border-radius: 25px;
+    padding: 2px;
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+#menuimg{
+   position: relative;
+   right: 4px;
+   bottom: 4px;
+    width: 38px;
+    height: 38px;
+    border-radius: 25px;
+}
+#menuimg:hover{
+width: 40px;
+height: 40px;
+}
+
+.options{
+    display: none;
+    
+}
+.options_closed{
+    z-index: 1;
+ position: absolute;
+ background-color: white;
+ -webkit-box-shadow: 0px 20px 60px -8px rgba(0, 0, 0, 1);
+ -moz-box-shadow: 0px 20px 60px -8px rgba(0, 0, 0, 1);
+ box-shadow: 0px 20px 60px -8px rgba(0, 0, 0, 1);
+    width:100%;
+    height:auto;
+    left:0;
+    top:-200px;
+   
+    animation-name: End, fade-out ;
+    animation-duration: 0.7s,  0.6s;
+    animation-fill-mode: forwards,  forwards;
+    animation-timing-function: cubic-bezier(.1,-.6,.2,0);   
+}
+@keyframes End{
+    0% {left:0px; top:80px}
+   100% {left:0px; top:-200px}
+} 
+
+@keyframes fade-out{
+    0% {opacity: 1;}
+   100% {opacity: -1;}
+} 
+
+
+
+.display_options{
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    -webkit-box-shadow: 0px 20px 41px -9px rgba(0, 0, 0, 1);
+ -moz-box-shadow: 0px 20px 41px -9px rgba(0, 0, 0, 1);
+ box-shadow: 0px 20px 41px -9px rgba(0, 0, 0, 1);
+    width:100%;
+    height: auto;
+    left:0px;
+    top:80px;
+    
+    animation-name: Open,  fade-in ;
+    animation-duration: 0.7s, 0.9s;
+    animation-fill-mode: forwards,  forwards;
+    animation-timing-function: cubic-bezier(.1,-.6,.2,0);
+} 
+@keyframes Open {
+    0% {left:0px; top:-200px}
+   100% {left:0px; top:80px}
+} 
+
+
+@keyframes fade-in{
+    0% {opacity: -1;}
+   100% {opacity: 1;}
+} 
+
+
+.theme{
+    display: none;
+    
+}
+.display_theme{
+    text-align: center;
+}
+.theme_closed{
+    text-align: center; 
+
+}
+
+#color-picker{
+    border: 1px solid black;  
+    width: 25px; 
+   height: 25px;
+   margin: 3px;
+}
+#dinosaurs_btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid grey;   
+    
+    background: none;
+}
+#btn_image_dinosaur{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    position: relative;
+    right: 3.7px;
+    bottom: 2px;
+}
+#dinosaurs_btn:hover{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+#btn_image_dinosaur:hover{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+.theme_buttons{
+text-align: center;
+}
+
+
+
+
+
+#body{
+    margin-top: 120px;
+}
+
 #clear{
+    border-radius: 25px;
+    font-family: 'Ubuntu', sans-serif;
     display: block;
     margin: 30px auto;
     text-align: center;
     padding: 5px;
-    width: 700px;
+    width: 300px;
     height: 50px;
-    background-color: bisque;
-    font-size: 30px;
-    border: 1px solid black;
-}
-.white{
     background-color: white;
-    width: 30px;
-    height: 30px;
-    margin: 1px;
-    border-radius: 19px;
+    font-size: 30px;
     border: none;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 1);
+ -moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 1);
+ box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 1);
 }
-.black{
-    background-color: black;
-    width: 30px;
-    height: 30px;
-    margin: 1px;
-    border-radius: 19px;
-    border: none;
+#clear:active{
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);   
 }

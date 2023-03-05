@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +11,30 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body>
-   
-    <h1 id="name">Gomoku</h1>
-
-    <table id="board">
+<body id="page">
     
-    </table>
+    <div  id="header">
+    
+      <button id="menu_btn" onClick="Menu()"><img id="menuimg" src="down-arrow.png" alt="menu"></button>
+     <h1 id="name">Gomoku</h1>
+   </div>
+   <div class="options" id="options">
+    <p class="theme" id="theme1">Background Color: <input  oninput="Background()" type="color" id="color-picker" value="#ffffff"  min="#0000ff" max="#6699ff"p>
+    <p class="theme" id="theme2">
+      <div class="theme_buttons" id="theme_buttons">
+      <button id="dinosaurs_btn" onclick="Dinosaurs()"><img id="btn_image_dinosaur" src="Dinosaur1.png" alt="dinosaurs"></button>
+       </div>
+    </p>
+    <p class="theme" id="theme3">3</p>
+    </div>
+    
+  <div id="body">
+     <table id="board">
+     </table>
+     <button id="clear" onClick="Clear()">New game</button>
+  </div> 
 
-    <button id="clear" onClick="Clear()">New game</button>
 
+   
 </body>
 </html>
