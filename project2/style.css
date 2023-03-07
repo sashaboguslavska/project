@@ -33,7 +33,7 @@ hr{
     border: none;
     background-color: transparent;
 }
-.btn:hover{
+.btn:hover, .btn_blue_green:hover, .btn_pink_violet:hover{
     background-color: rgb(171, 170, 170);
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
@@ -53,6 +53,70 @@ hr{
 }
 .black{
     background-color: grey;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+}
+
+.btn_blue_green{
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    background-color: transparent;
+}
+
+.blue{
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+}
+.green{
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+}
+
+.btn_pink_violet{
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    background-color: transparent;
+}
+
+.pink{
+    background-color: pink;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+}
+.violet{
+    background-color: violet;
     width: 30px;
     height: 30px;
     margin: 1px;
@@ -182,36 +246,34 @@ height: 40px;
    height: 25px;
    margin: 3px;
 }
-#dinosaurs_btn{
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    border: 1px solid grey;   
-    
-    background: none;
-}
-#btn_image_dinosaur{
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    position: relative;
-    right: 3.7px;
-    bottom: 2px;
-}
-#dinosaurs_btn:hover{
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-}
-#btn_image_dinosaur:hover{
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+#theme_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .theme_buttons{
-text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1.5px solid grey;   
+    background: none;
+    margin: 3px;
 }
 
+#blue_green_btn:active, #black_white_btn:active, #pink_violet:active{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+#blue_green_btn{
+    background:linear-gradient(to right, blue, green) ;
+}
+#black_white_btn{
+    background: linear-gradient(to right, white, black);
+}
+#pink_violet_btn{
+    background: linear-gradient(to right, pink, violet);
+}
 
 
 

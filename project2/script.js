@@ -24,20 +24,52 @@ for (i of buttons){
         let selected = []
         var btn_choice = e.target.id;
         var color = document.getElementById(btn_choice)
-        if(color.className =='white' || color.className =='black'){
+        if(color.className=='btn'){
+            if(color.className =='white' || color.className =='black'){
 
+            }
+            else {
+                if ( clickCount == 0 ) {
+                    color.className = "white";
+                    clickCount=1;
+                 }
+                 else {
+                   color.className = "black";
+                    clickCount=0; 
+                 }  
+            }
         }
-        else{
-            if ( clickCount == 0 ) {
-                color.className = "white";
-                clickCount=1;
-             }
-             else {
-               color.className = "black";
-                clickCount=0; 
-             }  
+        else if(color.className == 'btn_blue_green'){
+            if(color.className =='blue' || color.className =='green'){
+
+            }
+            else{
+                if ( clickCount == 0 ) {
+                    color.className = "blue";
+                    clickCount=1;
+                 }
+                 else {
+                   color.className = "green";
+                    clickCount=0; 
+                 }  
+            }  
+        } 
+        else if(color.className == 'btn_pink_violet'){
+            if(color.className =='pink' || color.className =='violet'){
+
+            }
+            else{
+                if ( clickCount == 0 ) {
+                    color.className = "pink";
+                    clickCount=1;
+                 }
+                 else {
+                   color.className = "violet";
+                    clickCount=0; 
+                 }  
+            }  
         }  
-        const b = document.querySelectorAll('button:not(#clear, #menu_btn)')
+        const b = document.querySelectorAll('button:not(#clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn)')
         for (o of b){
           selected.push(o)
         }//array wit all buttons with id and class name
@@ -49,7 +81,7 @@ for (i of buttons){
 }
 
 function Clear(){
-    const b = document.querySelectorAll('button:not(#clear, #menu_btn)')  
+    const b = document.querySelectorAll('button:not(#clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn)')  
     for(i of b){
         i.className = "btn"
     }
@@ -109,7 +141,7 @@ function Background(){
      
      
         for (var i = 0; i < tds.length; i++) {
-            tds[i].style.borderColor = "white";
+            tds[i].style.borderColor = "grey";
           }
       
       return;
@@ -122,7 +154,7 @@ function Background(){
         document.getElementById('options').style.boxShadow = "0px 20px 41px -9px grey"
         document.getElementById('header').style.boxShadow = "0px 16px 41px -9px grey"
         for (var i = 0; i < tds.length; i++) {
-            tds[i].style.borderColor = "white";
+            tds[i].style.borderColor = "grey";
           }
     } 
     
@@ -153,6 +185,48 @@ function hexToRgb(hex) {
     return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
   }
 
-  function Dinosaurs(){
+  function Black_white(){
+    const wb = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .green, .btn_blue_green, .btn_pink_violet, .violet');
+    for (var i = 0; i < wb.length; i++) {
+       wb[i].className = "white";
+     }
+     const bb = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink')
+    for (var i = 0; i < bb.length; i++) {
+       bb[i].className = "black";
+     }
+     const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .pink, .violet ');
+     for(var i = 0; i < btns.length; i++){
+       btns[i].className = 'btn'
+     }
+  }
 
+  function Blue_green(){
+    
+  const wb = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .btn_blue_green, .btn_pink_violet, .violet');
+ for (var i = 0; i < wb.length; i++) {
+    wb[i].className = "blue";
+  }
+  const bb = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .btn_blue_green, .btn_pink_violet, .pink')
+ for (var i = 0; i < bb.length; i++) {
+    bb[i].className = "green";
+  }
+  const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .btn_blue_green, .pink, .violet');
+  for(var i = 0; i < btns.length; i++){
+    btns[i].className = 'btn_blue_green'
+  }
+}
+function Pink_violet(){
+    
+    const wb = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .green, .btn_blue_green, .btn_pink_violet, .violet');
+   for (var i = 0; i < wb.length; i++) {
+      wb[i].className = "pink";
+    }
+    const bb = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink')
+   for (var i = 0; i < bb.length; i++) {
+      bb[i].className = "violet";
+    }
+    const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .pink, .violet');
+    for(var i = 0; i < btns.length; i++){
+      btns[i].className = 'btn_pink_violet'
+    }
   }
