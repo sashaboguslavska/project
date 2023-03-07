@@ -272,7 +272,7 @@ height: 40px;
     margin: 3px;
 }
 
-#blue_green_btn:active, #black_white_btn:active, #pink_violet:active, #red_yellow_btn:active{
+#blue_green_btn:active, #black_white_btn:active, #pink_violet_btn:active, #red_yellow_btn:active{
     width: 40px;
     height: 40px;
     border-radius: 20px;

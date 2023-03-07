@@ -95,6 +95,11 @@ for (i of buttons){
    
 }
 
+function Check(selected){ 
+ 
+   
+}
+
 function Clear(){
     const b = document.querySelectorAll('button:not(#clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn)')  
     for(i of b){
@@ -104,10 +109,6 @@ function Clear(){
     console.log(selected)
 }
 
-function Check(selected){ 
- 
-   
-}
 
 let menuCount=0;
 function Menu(){
@@ -146,7 +147,7 @@ function Background(){
      document.getElementById("clear").style.backgroundColor = color; 
      document.getElementById("page").style.backgroundColor = color;
     
-     if (brightness < 60 && brightness>15) {
+     if (brightness < 60 && brightness>20) {
         document.getElementById("page").style.color = "white";
         document.getElementById("clear").style.color = "white";
         document.getElementById('menu_btn').style.backgroundColor = "white"
@@ -161,7 +162,7 @@ function Background(){
       
       return;
     }
-     else if (brightness <15){
+     else if (brightness <20){
         document.getElementById("page").style.color = "white";
         document.getElementById("clear").style.color = "white";
         document.getElementById('menu_btn').style.backgroundColor = "white"
