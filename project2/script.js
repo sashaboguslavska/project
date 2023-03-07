@@ -68,8 +68,23 @@ for (i of buttons){
                     clickCount=0; 
                  }  
             }  
+        } 
+        else if(color.className == 'btn_red_yellow'){
+            if(color.className =='red' || color.className =='yellow'){
+
+            }
+            else{
+                if ( clickCount == 0 ) {
+                    color.className = "red";
+                    clickCount=1;
+                 }
+                 else {
+                   color.className = "yellow";
+                    clickCount=0; 
+                 }  
+            }  
         }  
-        const b = document.querySelectorAll('button:not(#clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn)')
+        const b = document.querySelectorAll('button:not(#clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn)')
         for (o of b){
           selected.push(o)
         }//array wit all buttons with id and class name
@@ -81,7 +96,7 @@ for (i of buttons){
 }
 
 function Clear(){
-    const b = document.querySelectorAll('button:not(#clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn)')  
+    const b = document.querySelectorAll('button:not(#clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn)')  
     for(i of b){
         i.className = "btn"
     }
@@ -186,15 +201,15 @@ function hexToRgb(hex) {
   }
 
   function Black_white(){
-    const wb = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .green, .btn_blue_green, .btn_pink_violet, .violet');
-    for (var i = 0; i < wb.length; i++) {
-       wb[i].className = "white";
+    const b1 = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .green, .btn_blue_green, .btn_pink_violet, .violet, .yellow, .btn_red_yellow');
+    for (var i = 0; i < b1.length; i++) {
+       b1[i].className = "white";
      }
-     const bb = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink')
-    for (var i = 0; i < bb.length; i++) {
-       bb[i].className = "black";
+     const b2 = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink, .red, .btn_red_yellow')
+    for (var i = 0; i < b2.length; i++) {
+       b2[i].className = "black";
      }
-     const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .pink, .violet ');
+     const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .green, .pink, .violet, .red, .yellow');
      for(var i = 0; i < btns.length; i++){
        btns[i].className = 'btn'
      }
@@ -202,31 +217,46 @@ function hexToRgb(hex) {
 
   function Blue_green(){
     
-  const wb = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .btn_blue_green, .btn_pink_violet, .violet');
- for (var i = 0; i < wb.length; i++) {
-    wb[i].className = "blue";
+  const b1 = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn,  .green, .btn_blue_green, .btn_pink_violet, .violet, .btn_red_yellow, .yellow');
+ for (var i = 0; i < b1.length; i++) {
+    b1[i].className = "blue";
   }
-  const bb = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .btn_blue_green, .btn_pink_violet, .pink')
- for (var i = 0; i < bb.length; i++) {
-    bb[i].className = "green";
+  const b2 = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink, .btn_red_yellow, .red')
+ for (var i = 0; i < b2.length; i++) {
+    b2[i].className = "green";
   }
-  const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .btn_blue_green, .pink, .violet');
+  const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .green, .pink, .violet, .red, .yellow ');
   for(var i = 0; i < btns.length; i++){
     btns[i].className = 'btn_blue_green'
   }
 }
 function Pink_violet(){
     
-    const wb = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .green, .btn_blue_green, .btn_pink_violet, .violet');
-   for (var i = 0; i < wb.length; i++) {
-      wb[i].className = "pink";
+    const b1 = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .green, .btn_blue_green, .btn_pink_violet, .violet, .btn_red_yellow, .yellow');
+   for (var i = 0; i < b1.length; i++) {
+      b1[i].className = "pink";
     }
-    const bb = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink')
-   for (var i = 0; i < bb.length; i++) {
-      bb[i].className = "violet";
+    const b2 = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink, .btn_red_yellow, .red')
+   for (var i = 0; i < b2.length; i++) {
+      b2[i].className = "violet";
     }
-    const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, .blue, .green, .pink, .violet');
+    const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .green, .pink, .violet, .red, .yellow');
     for(var i = 0; i < btns.length; i++){
       btns[i].className = 'btn_pink_violet'
+    }
+  }
+  function Red_yellow(){
+    
+    const b1 = document.querySelectorAll('button:not(.btn, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .green, .btn_blue_green, .btn_pink_violet, .violet, .yellow');
+   for (var i = 0; i < b1.length; i++) {
+      b1[i].className = "red";
+    }
+    const b2 = document.querySelectorAll('button:not(.white, .btn, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink, .red')
+   for (var i = 0; i < b2.length; i++) {
+      b2[i].className = "yellow";
+    }
+    const btns = document.querySelectorAll('button:not(.white, .black, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .green, .pink, .violet, .red, .yellow');
+    for(var i = 0; i < btns.length; i++){
+      btns[i].className = 'btn_red_yellow'
     }
   }

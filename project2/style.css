@@ -33,23 +33,19 @@ hr{
     border: none;
     background-color: transparent;
 }
-.btn:hover, .btn_blue_green:hover, .btn_pink_violet:hover{
+.btn:hover, .btn_blue_green:hover, .btn_pink_violet:hover, .btn_red_yellow:hover{
     background-color: rgb(171, 170, 170);
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);  
+    
 }
 
 .white{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(215, 215, 215);
     width: 30px;
     height: 30px;
     margin: 1px;
     border-radius: 19px;
     border: none;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+   
 }
 .black{
     background-color: grey;
@@ -58,10 +54,7 @@ hr{
     margin: 1px;
     border-radius: 19px;
     border: none;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-}
+}  
 
 .btn_blue_green{
     width: 30px;
@@ -79,9 +72,7 @@ hr{
     margin: 1px;
     border-radius: 19px;
     border: none;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    
 }
 .green{
     background-color: green;
@@ -90,9 +81,6 @@ hr{
     margin: 1px;
     border-radius: 19px;
     border: none;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
 }
 
 .btn_pink_violet{
@@ -111,9 +99,7 @@ hr{
     margin: 1px;
     border-radius: 19px;
     border: none;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+    
 }
 .violet{
     background-color: violet;
@@ -122,9 +108,35 @@ hr{
     margin: 1px;
     border-radius: 19px;
     border: none;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
+   
+}
+
+.btn_red_yellow{
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+    background-color: transparent;
+}
+
+.red{
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+  
+}
+.yellow{
+    background-color: rgb(255, 234, 0);
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 19px;
+    border: none;
+ 
 }
 
 #header{
@@ -260,19 +272,22 @@ height: 40px;
     margin: 3px;
 }
 
-#blue_green_btn:active, #black_white_btn:active, #pink_violet:active{
+#blue_green_btn:active, #black_white_btn:active, #pink_violet:active, #red_yellow_btn:active{
     width: 40px;
     height: 40px;
     border-radius: 20px;
 }
 #blue_green_btn{
-    background:linear-gradient(to right, blue, green) ;
+    background:linear-gradient(to right, blue 0%, blue 50%, green 50%, green 100%) ;
 }
 #black_white_btn{
-    background: linear-gradient(to right, white, black);
+    background: linear-gradient(to right, white 0%, white 50%,black 50%, black 100%);
 }
 #pink_violet_btn{
-    background: linear-gradient(to right, pink, violet);
+    background: linear-gradient(to right, pink 0%, pink 50%, violet 50%, violet 100%);
+}
+#red_yellow_btn{
+    background: linear-gradient(to right, red 0%, red 50%, rgb(255, 234, 0) 50%, rgb(255, 234, 0) 100%);
 }
 
 
