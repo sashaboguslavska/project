@@ -15,7 +15,7 @@
     
     <div  id="header">
     
-      <button id="menu_btn" onClick="Menu()"><img id="menuimg" src="down-arrow.png" alt="menu"></button>
+      <button id="menu_btn" onclick="Menu()"><img id="menuimg" src="down-arrow.png" alt="menu"></button>
      <h1 id="name">Gomoku</h1>
    </div>
    <div class="options" id="options">
@@ -28,13 +28,17 @@
       <button class="theme_buttons" id="red_yellow_btn" onclick="Red_yellow()"></button>
        </div>
     </p>
-    <p class="theme" id="theme3">3</p>
+    
     </div>
     
   <div id="body">
+    <div class="alert" id="alert">
+        <button id="new_game" onclick="Clear(), Hide()" >New game</button>
+        <p id="text"></p>
+    </div>
      <table id="board">
      </table>
-     <button id="clear" onClick="Clear()">New game</button>
+     <button id="clear" onclick="Clear()">New game</button>
   </div> 
 
 
