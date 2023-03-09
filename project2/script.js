@@ -1,21 +1,61 @@
 const cells = []
-for (let row = 0; row<18; row++){
-    const tr = document.createElement('tr') 
-    for (let col = 0; col<18; col++){
-        const td = document.createElement('td')
+
+//Changable properties
+var tableSize = 18
+var winCon = 5
+var colors = {
+    color1 : "rgba(255, 255, 255)",
+    color2 : "rgba(0, 0, 0, 1"
+}
+
+//end of changable properties
+
+
+var gameEnd = []
+var winCheckOrder = [
+    [0, 1],
+    [1, 0],
+    [1, 1],
+    [-1, 1],
+]
+var tileStyle = {
+    size: innerHeight/tableSize,
+    margin: 1
+}
+var currentTurn = "x"
+var tiles = []
+var mouse = {
+    x : undefined,
+    y: undefined
+}
+
+
+for(i = 0; i < tableSize; i++) {
+    tiles.push([])
+    for (o = 0; o < tableSize; o++) {
+        tiles[i].push({type: "n"})
+        
+    }
+}
+
+for (let i = 0; i < tableSize; i++) {
+     elemTr = $("<tr></tr>")
+    for (let o = 0; o < tableSize; o++) {
+        elemTd = $(`<td id="${i}-${o}" onclick="clickHandler(${i}, ${o})"></td>`)
+        $(elemTr).append(elemTd)
         const btn = document.createElement("button")
         btn.textContent = ""
         btn.className = "btn"
-        td.append(btn)
-        cells.push(btn) 
-        tr.append(td) 
+        elemTd.append(btn)
+       cells.push(btn) 
+       elemTr.append(elemTd) 
     }
-    board.append(tr) 
+    $("table").append(elemTr)
 }
 
-for (let i = 0; i < cells.length; i++){
-    cells[i ].id = i
-} 
+for( let i =0; i<cells.length; i++){
+    cells[i].id = i
+}
 
 const buttons = document.getElementsByClassName('btn');
 for (i of buttons){
@@ -23,63 +63,63 @@ for (i of buttons){
     i.addEventListener("click", function(e){
         let selected = []
         var btn_choice = e.target.id;
-        var color = document.getElementById(btn_choice)
-        if(color.className=='btn'){
-            if(color.className =='white' || color.className =='black'){
+        var btn_color = document.getElementById(btn_choice)
+        if(btn_color.className=='btn'){
+            if(btn_color.className =='white' || btn_color.className =='black'){
 
             }
             else {
                 if ( clickCount == 0 ) {
-                    color.className = "white";
+                    btn_color.className = "white";
                     clickCount=1;
                  }
                  else {
-                   color.className = "black";
+                    btn_color.className = "black";
                     clickCount=0; 
                  }  
             }
         }
-        else if(color.className == 'btn_blue_green'){
-            if(color.className =='blue' || color.className =='green'){
+        else if(btn_color.className == 'btn_blue_green'){
+            if(btn_color.className =='blue' || btn_color.className =='green'){
 
             }
             else{
                 if ( clickCount == 0 ) {
-                    color.className = "blue";
+                    btn_color.className = "blue";
                     clickCount=1;
                  }
                  else {
-                   color.className = "green";
+                    btn_color.className = "green";
                     clickCount=0; 
                  }  
             }  
         } 
-        else if(color.className == 'btn_pink_violet'){
-            if(color.className =='pink' || color.className =='violet'){
+        else if(btn_color.className == 'btn_pink_violet'){
+            if(btn_color.className =='pink' || btn_color.className =='violet'){
 
             }
             else{
                 if ( clickCount == 0 ) {
-                    color.className = "pink";
+                    btn_color.className = "pink";
                     clickCount=1;
                  }
                  else {
-                   color.className = "violet";
+                    btn_color.className = "violet";
                     clickCount=0; 
                  }  
             }  
         } 
-        else if(color.className == 'btn_red_yellow'){
-            if(color.className =='red' || color.className =='yellow'){
+        else if(btn_color.className == 'btn_red_yellow'){
+            if(btn_color.className =='red' || btn_color.className =='yellow'){
 
             }
             else{
                 if ( clickCount == 0 ) {
-                    color.className = "red";
+                    btn_color.className = "red";
                     clickCount=1;
                  }
                  else {
-                   color.className = "yellow";
+                    btn_color.className = "yellow";
                     clickCount=0; 
                  }  
             }  
@@ -87,109 +127,31 @@ for (i of buttons){
         const b = document.querySelectorAll('button:not(#clear, #new_game, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn)')
         for (o of b){
           selected.push(o)
-        }//array wit all buttons with id and class name
-        console.log(selected)
-        Check1(selected)
-        Check2(selected)
-         //functions to check if there are 5 buttons with the same classnames in a row
+        }
     }) 
    
 }
+function clickHandler(y, x){
 
-function Check1(selected){ 
-    let count1 =1
-    let count2 =1
-    
- for (let i =0; i< selected.length; i++){
-    let selected1 = selected[i]
-    let selected2 = selected[i+1]
-    let selected3 = selected[i+2]
-    if(selected1.className != 'btn' && selected1.className != 'btn_blue_green' && selected1.className != 'btn_pink_violet' && selected1.className != 'btn_red_yellow'){
-        if(selected1.className == selected2.className){
-            if(selected1.className == 'white' || selected1.className == 'blue' || selected1.className == 'pink' ||selected1.className == 'red'){
-                count1+=1 
-                
+    if(tiles[y][x].type == "n"){
+        if(gameEnd.length <= 2){
+            if(currentTurn == "x"){
+                currentTurn = "o"
+            } else{
+                currentTurn = "x"
             }
-            if(selected1.className == 'black' || selected1.className == 'green' || selected1.className == 'violet' ||selected1.className == 'yellow'){
-                count2+=1 
-               
-            }
-            if(count1 == 5 || count2 == 5){
-                let text ='Winner: '+ selected1.className
-                setTimeout(function() {
-                    document.getElementById('alert').className = "alert_display" 
-                    document.getElementById('text').innerHTML = text
-                }, 250)
-                
-                break; 
-             }   
-            
         }
-        if(selected1.className != selected3.className){
-            if(selected1.className == 'white' || selected1.className == 'blue' || selected1.className == 'pink' ||selected1.className == 'red'){
-                count1=1 
-            }
-            if(selected1.className == 'black' || selected1.className == 'green' || selected1.className == 'violet' ||selected1.className == 'yellow'){
-                count2=1 
-            }
-          
-            
-        }
+        //$(`#${y}-${x}`).css("background-color", `${currentTurn == "x" ? colors.color1 : colors.color2}`)
+        tiles[y][x].type = currentTurn
         
-      
     }
-   
- }
-  
-
-}
-function Check2(selected){ 
-    let count1 =1
-    let count2 =1
+    checkWin([x, y])
     
- for (let i =0; i< selected.length; i++){
-    let selected1 = selected[i]
-    let selected2 = selected[i+18]
-    let selected3 = selected[i+36]
-    if(selected1.className != 'btn' && selected1.className != 'btn_blue_green' && selected1.className != 'btn_pink_violet' && selected1.className != 'btn_red_yellow'){
-        if(selected1.className == selected2.className){
-            if(selected1.className == 'white' || selected1.className == 'blue' || selected1.className == 'pink' ||selected1.className == 'red'){
-                count1+=1 
-                
-            }
-            if(selected1.className == 'black' || selected1.className == 'green' || selected1.className == 'violet' ||selected1.className == 'yellow'){
-                count2+=1 
-               
-            }
-            if(count1 == 5 || count2 == 5){
-                let text ='Winner: '+ selected1.className
-                setTimeout(function() {
-                    document.getElementById('alert').className = "alert_display" 
-                    document.getElementById('text').innerHTML = text
-                }, 250)
-                
-                break; 
-             }   
-            
-        }
-        if(selected1.className != selected3.className){
-            if(selected1.className == 'white' || selected1.className == 'blue' || selected1.className == 'pink' ||selected1.className == 'red'){
-                count1=1 
-            }
-            if(selected1.className == 'black' || selected1.className == 'green' || selected1.className == 'violet' ||selected1.className == 'yellow'){
-                count2=1 
-            }
-          
-            
-        }
-        
-      
-    }
-   
- }
-  
 
+    return [x, y]
 }
+
+
 
 function Clear(){
     const b = document.querySelectorAll('button:not(#clear, #new_game, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn)')  
@@ -198,9 +160,6 @@ function Clear(){
     }
     selected=[]
     console.log(selected)
-}
-function Hide(){
-    document.getElementById('alert').className = "alert"
 }
 
 
@@ -355,3 +314,150 @@ function Pink_violet(){
       btns[i].className = 'btn_red_yellow'
     }
   }
+
+
+
+
+  function checkWin(pos){
+    // X
+    startCoor = {x:pos[0], y:pos[1]}
+
+    // horiz
+    counter = 0
+    for (let i = 0; i < tableSize; i++) {
+        if(tiles[startCoor.y][i].type == currentTurn){
+            counter++
+            if(counter == winCon){
+                gameEnd[2] = startCoor.y
+                gameEnd[3] = i
+                break
+            } else if(counter == 1){
+                gameEnd[0] = startCoor.y
+                gameEnd[1] = i
+                console.log(gameEnd)
+            }
+        } else{
+            counter = 0
+        }
+    }
+
+    //vert
+    counter = 0
+
+    for (let i = 0; i < tableSize; i++) {
+        if(tiles[i][startCoor.x].type == currentTurn){
+            counter++
+            if(counter == winCon){
+                gameEnd[2] = i
+                gameEnd[3] = startCoor.x
+                break
+            } else if(counter == 1){
+                gameEnd[0] = i
+                gameEnd[1] = startCoor.y
+                console.log(gameEnd)
+            }
+        } else{
+            counter = 0
+        }
+    }
+
+    //diag left right down
+
+    counter = 0
+
+    if(startCoor.x <= startCoor.y){
+        initX = 0
+        initY = startCoor.y-startCoor.x
+    } else{
+        initY = 0
+        initX = startCoor.x-startCoor.y
+    }
+
+    while (initX < tableSize && initY < tableSize) {
+        
+        if(tiles[initY][initX].type == currentTurn){
+            counter++
+            if(counter == winCon){
+                gameEnd[2] = initY
+                gameEnd[3] = initX
+                break
+            } else if(counter == 1){
+                gameEnd[0] = initY
+                gameEnd[1] = initX
+                console.log(gameEnd)
+            }
+        } else{
+            counter = 0
+        }
+        
+        initX++
+        initY++
+    }
+
+    //diag left right up
+
+    counter = 0
+
+    initX = startCoor.x
+    initY = startCoor.y
+    while (initX > 0 && initY < tableSize-1) {
+        initX--
+        initY++
+    }
+    
+    while (initX < tableSize && initY >= 0) {
+        if(tiles[initY][initX].type == currentTurn){
+            counter++
+            if(counter == winCon){
+                gameEnd[2] = initY
+                gameEnd[3] = initX
+                break
+            } else if(counter == 1){
+                gameEnd[0] = initY
+                gameEnd[1] = initX
+                console.log(gameEnd)
+            }
+        } else{
+            counter = 0
+        }
+        
+        initX++
+        initY--
+    }
+    
+    if(gameEnd.length > 2){
+       const btns = document.querySelector('button:not(.white, .black, #new_game, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .green, .pink, .violet, .red, .yellow ');
+      
+
+       if(btns.className=='btn'){
+        let text = (currentTurn == "o" ? "White" : "Black") + " won"
+        setTimeout(function() {
+            document.getElementById('alert').className = "alert_display" 
+             document.getElementById('text').innerHTML = text
+           }, 250)
+       }
+       else if(btns.className=='btn_blue_green'){
+        let text = (currentTurn == "o" ? "Blue" : "Green") + " won"
+        setTimeout(function() {
+            document.getElementById('alert').className = "alert_display" 
+             document.getElementById('text').innerHTML = text
+           }, 250)
+       }
+       else if(btns.className=='btn_pink_violet'){
+        let text = (currentTurn == "o" ? "Pink" : "Violet") + " won"
+        setTimeout(function() {
+            document.getElementById('alert').className = "alert_display" 
+             document.getElementById('text').innerHTML = text
+           }, 250)
+       }
+       else if(btns.className=='btn_red_yellow'){
+        let text = (currentTurn == "o" ? "Red" : "Yellow") + " won"
+        setTimeout(function() {
+            document.getElementById('alert').className = "alert_display" 
+             document.getElementById('text').innerHTML = text
+           }, 250)
+       }
+        
+    }
+
+}

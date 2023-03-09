@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -33,7 +34,7 @@
     
   <div id="body">
     <div class="alert" id="alert">
-        <button id="new_game" onclick="Clear(), Hide()" >New game</button>
+        <button id="new_game" onclick="window.location.reload();" >New game</button>
         <p id="text"></p>
     </div>
      <table id="board">
