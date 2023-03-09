@@ -301,11 +301,11 @@ function Pink_violet(){
   }
   function Red_yellow(){
     
-    const b1 = document.querySelectorAll('button:not(.btn, .black, #new_game, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .green, .btn_blue_green, .btn_pink_violet, .violet, .yellow');
+    const b1 = document.querySelectorAll('button:not(.btn, .black, #new_game, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .btn_red_yellow, .green, .btn_blue_green, .btn_pink_violet, .violet, .yellow');
    for (var i = 0; i < b1.length; i++) {
       b1[i].className = "red";
     }
-    const b2 = document.querySelectorAll('button:not(.white, .btn, #new_game, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .blue, .btn_blue_green, .btn_pink_violet, .pink, .red')
+    const b2 = document.querySelectorAll('button:not(.white, .btn, #new_game, #clear, #menu_btn, #black_white_btn, #blue_green_btn, #pink_violet_btn, #red_yellow_btn, .btn_red_yellow, .blue, .btn_blue_green, .btn_pink_violet, .pink, .red')
    for (var i = 0; i < b2.length; i++) {
       b2[i].className = "yellow";
     }
