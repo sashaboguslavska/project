@@ -141,7 +141,7 @@ function clickHandler(y, x){
                 currentTurn = "x"
             }
         }
-        //$(`#${y}-${x}`).css("background-color", `${currentTurn == "x" ? colors.color1 : colors.color2}`)
+       
         tiles[y][x].type = currentTurn
         
     }
