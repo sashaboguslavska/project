@@ -6,22 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Plants</title>
+    <title>My plants</title>
 </head>
 <body>
     <div id="home">
         <div id="header">
             <h1 class="header1">My plants</h1>
-            <p class="header">Home</p>
-            <p class="header">Plant care</p>
-            <p class="header">Watering</p>
-            <p class="header">My plants</p>
+            <a class="header" href="index.html" class="pages">Home</a>
+            <div class="dropdown">
+                <p class="header">Plant care</p>
+                <div class="dropdown-content">
+                  <a id="cactus" href="#" class="pages">Cactus plants</a>
+                  <a id="succulent" href="#" class="pages">Succulent plants</a>
+                  <a id="climbing" href="#" class="pages">Climbing plants</a>
+                  <a id="bulbous_type" href="#" class="pages">Bulbous type plants</a>
+                  <a id="palm" href="#" class="pages">Indoor palm plants</a>
+                </div>
+              </div>
+            <div class="dropdown">
+                <p class="header">Watering</p>
+                <div class="dropdown-content">
+                  <a href="#">Watering tips</a>
+                  <a href="#">Calendar</a>
+                </div>
+              </div>
+            <a class="header" href="">My plants</a>
         </div>
         <div id="home_img">
             <img id="h_image" src="img1.jpg" alt="home image">
             <h1 id="name">My plants</h1>
         </div>
 
+        <div id="body">
+
+        </div>
     </div>
 </body>
 </html>
